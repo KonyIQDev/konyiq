@@ -13,17 +13,33 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.post("/", function(req, res) {
-  var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText
-      : "Seems like some problem. Speak again.";
+restService.post("/", function (req, res) {
+    var speech = "";
+    if (req.body.result &&
+        req.body.result.parameters)
+    {
+        if (req.body.result.parameters.echoText)
+        {
+            speech = req.body.result.parameters.echoText
+                ? req.body.result.parameters.echoText
+                : "Seems like some problem. Speak again.";
+        }
+        else
+        {
+            if (req.body.result.parameters.Widget)
+            {
+                speech = "You are trying to get help on " + req.body.result.parameters.Widget;
+            }
+        }
+    }
+    else
+    {
+        speech = "Did you Speak? Seems like some problem. Speak again.";
+    } 
   return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhook-echo-sample"
+    source: "KonyIQ"
   });
 });
 
