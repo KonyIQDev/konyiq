@@ -1,7 +1,7 @@
 {
-  "name": "webhook-konyiq-sample",
+  "name": "KonyIQ-help",
   "version": "1.0.0",
-  "description": "Webhook konyiq sample",
+  "description": "KonyIQ Help for App Developers",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
