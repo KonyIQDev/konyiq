@@ -11,12 +11,7 @@ This simple app will help you understand
 
 # How it works?
 - Push this app to Heroku
-- Test the API https://webhook-echo-sample.herokuapp.com/echo - use www.hurl.it to test it
+- Test the API https://konyiq.herokuapp.com/ - use www.hurl.it to test it
 
 Open DialogFlow portal - https://dialogflow.com/
 - Create an account and login
-
-# Video
-Watch this video to learn the steps to create sample application.
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/VX7SSnvpj-8/0.jpg)](https://www.youtube.com/watch?v=VX7SSnvpj-8)
