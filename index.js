@@ -25,15 +25,16 @@ restService.post("/", function (req, res) {
                 : "Seems like some problem. Speak again.";
         }
         else
-        {
+        {            
             if (req.body.result.parameters.Widget && req.body.result.parameters.WidgetProperty)
             {
-                speech = "here is the code snippet. \n"+ req.body.result.parameters.Widget + "." + req.body.result.parameters.WidgetProperty + " = <some value>;";
+                speech = "here is the code snippet. \n "+ req.body.result.parameters.Widget + "." + req.body.result.parameters.WidgetProperty + " = <some value>;";
             }
             else
             {
                 speech = "You are trying to get help on " + req.body.result.parameters.Widget;
             }
+            speech = speech + "\n" + JSON.stringify(req.body.result.parameters);
         }
     }
     else
