@@ -25,16 +25,33 @@ restService.post("/", function (req, res) {
         //    speech = "You are trying to get help on " + req.body.result.parameters.Widget;
         //}
         speech = speech + "\n" + JSON.stringify(req.body.result.parameters);
+
+        var accessTocken = 'xx2b18016f-7c73-418e-a61e-02d06be87d74';
+        //var request = require('request');
+        var requesturl = 'https://platform.cloud.coveo.com/rest/search/v2/?aq=';
+        requesturl += encodeURI(body._text);
+        requesturl += '&access_token=' + accessTocken;
+        requesturl += '&organizationId=konycommunitycloud';
+        req(requesturl, function (error, response, body) {
+            return res.json({
+                speech: speech,
+                displayText: response.body,
+                source: "KonyIQ"
+            });
+        }.bind(this)
+        );
     }
     else
     {
         speech = "Did you Speak? Seems like some problem. Speak again.";
+
+        return res.json({
+            speech: speech,
+            displayText: speech,
+            source: "KonyIQ"
+        });
     } 
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "KonyIQ"
-  });
+ 
 });
 
 restService.get("/", function (req, res) {
