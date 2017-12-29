@@ -198,7 +198,7 @@ restService.post("/slack-test", function(req, res) {
   return res.json({
     speech: "speech",
     displayText: "speech",
-    source: "webhook-echo-sample",
+    source: "webhook-konyiq-sample",
     data: {
       slack: slack_message
     }
@@ -206,5 +206,5 @@ restService.post("/slack-test", function(req, res) {
 });
 
 restService.listen(process.env.PORT || 8000, function() {
-  console.log("Server up and listening");
+    console.log("Server up and listening at http://localhost:5000/");
 });
