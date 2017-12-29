@@ -40,7 +40,7 @@ restService.post("/", function (req, res) {
         requesturl += '&organizationId=konycommunitycloud';
         request(requesturl, function (error, response, body) {
             return res.json({
-                speech: speech,
+                speech: response.body,
                 displayText: response.body,
                 source: "KonyIQ"
             });
