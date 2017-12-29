@@ -31,7 +31,7 @@ restService.post("/", function (req, res) {
         //    source: "KonyIQ"
         //});
 
-        //speech = JSON.stringify(req.body.result.parameters);
+        var paramOriginal = JSON.stringify(req.body.result.parameters);
         speech = req.body.result.parameters.Widget;
         var accessTocken = 'xx2b18016f-7c73-418e-a61e-02d06be87d74';
         var request = require('request');
@@ -41,7 +41,7 @@ restService.post("/", function (req, res) {
         requesturl += '&organizationId=konycommunitycloud';
         request(requesturl, function (error, response, body) {
             return res.json({
-                speech: response.body,
+                speech: paramOriginal + '\n' +response.body,
                 displayText: response.body,
                 source: "KonyIQ"
             });
