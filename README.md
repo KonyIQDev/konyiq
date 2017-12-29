@@ -1,10 +1,12 @@
-# Webhook-and-API.AI-Sample - Echo your text
+# KonyIQ Help Bot Server
 
-A very simple step by step, 11:06 minutes demo (see video at the end of read me) of implementing an echo service using webhook. Whatever user asks Google Assistant will be sent to your API and then same text will be sent back as speech text.
+App developers shall communicate via Kony Chat window in below means
+1.	Direct communication with Bots (both Kony and Third-party bots)
+2.	Suggestions provided by Bots based on Visualizer events. These events are triggered for each user action in Visualizer
+3.	Bots may broadcast messages to all registered chat clients.
+4.	Direct communication with Visualizer
 
-This simple app will help you understand
-- How to write an API in node
-- How to integrate your node JS app with DialogFlow (API.AI) as webhook
+Kony Chat in Visualizer shall be integrated with with DialogFlow (API.AI) as webhook
 
 # Deploy to:
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
