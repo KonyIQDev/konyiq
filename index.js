@@ -31,7 +31,8 @@ restService.post("/", function (req, res) {
         //    source: "KonyIQ"
         //});
 
-        speech = JSON.stringify(req.body.result.parameters);
+        //speech = JSON.stringify(req.body.result.parameters);
+        speech = req.body.result.parameters.Widget;
         var accessTocken = 'xx2b18016f-7c73-418e-a61e-02d06be87d74';
         var request = require('request');
         var requesturl = 'https://platform.cloud.coveo.com/rest/search/v2/?aq=';
