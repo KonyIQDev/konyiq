@@ -26,7 +26,11 @@ restService.post("/", function (req, res) {
         }
         else
         {
-            if (req.body.result.parameters.Widget)
+            if (req.body.result.parameters.Widget && req.body.result.parameters.WidgetProperty)
+            {
+                speech = "here is the code snippet. \n"+ req.body.result.parameters.Widget + "." + req.body.result.parameters.WidgetProperty + " = <some value>;";
+            }
+            else
             {
                 speech = "You are trying to get help on " + req.body.result.parameters.Widget;
             }
