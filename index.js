@@ -24,12 +24,13 @@ restService.post("/", function (req, res) {
         //else {
         //    speech = "You are trying to get help on " + req.body.result.parameters.Widget;
         //}
-        speech = speech + "\n" + JSON.stringify(req.body.result.parameters);
+        //speech = speech + "\n" + JSON.stringify(req.body.result.parameters);
 
+        speech = JSON.stringify(req.body.result.parameters);
         var accessTocken = 'xx2b18016f-7c73-418e-a61e-02d06be87d74';
         //var request = require('request');
         var requesturl = 'https://platform.cloud.coveo.com/rest/search/v2/?aq=';
-        requesturl += encodeURI(body._text);
+        requesturl += encodeURI(speech);
         requesturl += '&access_token=' + accessTocken;
         requesturl += '&organizationId=konycommunitycloud';
         req(requesturl, function (error, response, body) {
