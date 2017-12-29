@@ -1,6 +1,6 @@
 {
   "name": "Webhook-konyiq-sample",
   "description": "Webhook konyiq sample",
-  "repository": "https://github.com/SunilSyal/Webhook-and-API.AI-Samples.git",
+  "repository": "https://github.com/KonyIQDev/konyiq.git",
   "keywords": [ "api.ai", "dialogflow", "natural language" ]
 }
